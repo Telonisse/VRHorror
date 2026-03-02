@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639076473554580902
+  lastModified: 639080593173231124
   FileSizes: []
   Exists: 1
 --- !u!114 &-2124286374893910305
@@ -33,10 +33,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639076473554593281
+  lastModified: 639080593173241134
   FileSizes:
   - Name: 
-    Value: 818
+    Value: 816
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -53,20 +53,20 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: -2124286374893910305}
   - {fileID: -8869489906325657990}
-  - {fileID: 1305765024780261311}
+  - {fileID: 621947973887519848}
   EditorEvents:
-  - {fileID: 8719366354733145807}
+  - {fileID: 4778310161712485826}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8869489906325657990}
   StringsBanks:
   - {fileID: -2124286374893910305}
   cacheVersion: 131858
-  cacheTime: 639076473555524504
+  cacheTime: 639080593174130910
   SerializableEventsDict:
-  - key: event:/New Event
+  - key: event:/TheaTest
     index: 0
---- !u!114 &1305765024780261311
+--- !u!114 &621947973887519848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,15 +76,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Test.bank
+  m_Name: bank:/Thea.bank
   m_EditorClassIdentifier: 
-  Path: FMOD/Desktop/Test.bank
-  Name: Test
-  StudioPath: bank:/Test
-  lastModified: 639076473555524504
+  Path: FMOD/Desktop/Thea.bank
+  Name: Thea
+  StudioPath: bank:/Thea
+  lastModified: 639080593174130910
   FileSizes: []
   Exists: 1
---- !u!114 &8719366354733145807
+--- !u!114 &4778310161712485826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,16 +94,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/New Event
+  m_Name: event:/TheaTest
   m_EditorClassIdentifier: 
-  Path: event:/New Event
+  Path: event:/TheaTest
   Guid:
-    Data1: -2067635839
-    Data2: 1114041973
-    Data3: -670728035
-    Data4: -614124648
+    Data1: 327952517
+    Data2: 1183638350
+    Data3: 186169217
+    Data4: 1854647259
   Banks:
-  - {fileID: 1305765024780261311}
+  - {fileID: 621947973887519848}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
