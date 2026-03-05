@@ -622,10 +622,6 @@ MonoBehaviour:
   gazeIndicator: {fileID: 1906566980}
   maxRayDistance: 20
   requiredDwellTime: 3
-  targetTag: Interactable
-  onDwellComplete:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &369396215
 Transform:
   m_ObjectHideFlags: 0
