@@ -20,5 +20,7 @@ namespace Bhaptics.SDK2
         public const string DASH = "dash";
         
         public const string RECOIL = "recoil";
+        
+        public const string TEST = "test";
     }
 }
