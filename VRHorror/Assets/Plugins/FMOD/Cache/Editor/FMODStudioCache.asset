@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639081661518308916
+  lastModified: 639080593173231124
   FileSizes: []
   Exists: 1
 --- !u!114 &-2124286374893910305
@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639081661518308916
+  lastModified: 639080593173241134
   FileSizes:
   - Name: 
     Value: 816
@@ -62,7 +62,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -2124286374893910305}
   cacheVersion: 131858
-  cacheTime: 639081661518321765
+  cacheTime: 639080593174130910
   SerializableEventsDict:
   - key: event:/TheaTest
     index: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/Thea.bank
   Name: Thea
   StudioPath: bank:/Thea
-  lastModified: 639081661518321765
+  lastModified: 639080593174130910
   FileSizes: []
   Exists: 1
 --- !u!114 &4778310161712485826
