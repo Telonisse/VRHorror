@@ -7,5 +7,6 @@ public class bHapticsTestScript : MonoBehaviour
     private void Start()
     {
         bhaptics_library.play(BhapticsEvent.DASH);
+
     }
 }
