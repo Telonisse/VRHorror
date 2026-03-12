@@ -438,6 +438,26 @@ MonoBehaviour:
   company: FMOD
   priority: 0
   required: 0
+--- !u!114 &-2964829487092249513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 369c18de2bb8eba458fea38b9c7dc289, type: 3}
+  m_Name: FMODHapticsFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: 'FMOD: Haptics'
+  version: 1.0.0
+  featureIdInternal: com.fmod.feature.haptic
+  openxrExtensionStrings: XR_FB_haptic_pcm
+  company: FMOD
+  priority: 0
+  required: 0
 --- !u!114 &-2702543526205532939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,6 +928,7 @@ MonoBehaviour:
   - {fileID: -2702543526205532939}
   - {fileID: -4421305761336098532}
   - {fileID: -3931818352352273040}
+  - {fileID: -2964829487092249513}
   - {fileID: 5858482342807391523}
   - {fileID: -27853177666421368}
   - {fileID: 3756347135952723940}
