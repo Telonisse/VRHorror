@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3daa8b3befa8dc469d4241308281a19, type: 3}
-  m_Name: DarkRoomStart
+  m_Script: {fileID: 11500000, guid: c065ac8141b52b8479afd72257023ef7, type: 3}
+  m_Name: TunrLampIdk
   m_EditorClassIdentifier: 
-  nodeName: DarkRoomStart
-  triggerEvent: 0
-  actions:
-    m_PersistentCalls:
-      m_Calls: []
-  NextNodes: []
+  Lamp: {fileID: 123683432016288829, guid: df3330b8b5cd71a41bcf4303a3da3123, type: 3}
