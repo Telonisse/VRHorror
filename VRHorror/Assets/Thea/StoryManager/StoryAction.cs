@@ -2,12 +2,11 @@ using UnityEngine;
 
 public enum StoryAction 
 {
-    None,
+    None = 0,
 
-    TurnLampOff,
-    TurnLampOn,
-    DollPointAtLightSwitch,
-    EnableLampButton,
-    DisableLampButton,
+    TurnLampOff = 1,
+    TurnLampOn = 2,
+    EnableLampButton = 3,
+    DisableLampButton = 4,
 
 }

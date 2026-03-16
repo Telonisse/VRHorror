@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: StartNode
   m_EditorClassIdentifier: 
   nodeName: StartNode
-  enterActions: 0100000004000000
+  enterActions: 0100000003000000
   exitActions: 
   transitions:
   - triggerEvent: 1
     nextNode: {fileID: 11400000, guid: becf2f92ad018104d838db78f31e95cc, type: 2}
-  editorPosition: {x: 77, y: 100}
+  editorPosition: {x: 77, y: 84}

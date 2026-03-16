@@ -50,7 +50,7 @@ public class TurnLampOn : MonoBehaviour
         if (lamp.activeSelf)
         {
             TurnLampOff();
-            StoryManager.Instance.TriggerEvent(StoryEvent.LightTurnedOff); // or maybe create a separate event "LightTurnedOff"
+            StoryManager.Instance.TriggerEvent(StoryEvent.LightTurnedOff); 
             Debug.Log("Lamp turned OFF");
         }
         else

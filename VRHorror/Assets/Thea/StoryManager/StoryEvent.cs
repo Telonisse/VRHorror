@@ -2,8 +2,8 @@ using UnityEngine;
 
 public enum StoryEvent
 {
-    None, 
-    LightTurnedOn,
-    LightTurnedOff
+    None = 0, 
+    LightTurnedOn = 1,
+    LightTurnedOff = 2
 
 }
