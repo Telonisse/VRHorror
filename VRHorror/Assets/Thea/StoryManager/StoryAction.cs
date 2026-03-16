@@ -4,7 +4,8 @@ public enum StoryAction
 {
     None,
 
-    TurnLightOff,
+    TurnLampOff,
+    TurnLampOn,
     DollPointAtLightSwitch,
     EnableLampButton,
     DisableLampButton,

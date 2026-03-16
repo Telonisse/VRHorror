@@ -5,50 +5,57 @@ public class StoryManager : MonoBehaviour
 {
     public static StoryManager Instance;
 
-    public StoryGraph graph;
+    [Header("Starting Node")]
+    public StoryNode startNode;
 
-    int currentNode;
+    private StoryNode currentNode;
 
-    void Awake()
+    private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
     }
 
-    void Start()
+    private void Start()
     {
-        EnterNode(graph.startNode);
+        if (startNode != null)
+            EnterNode(startNode);
+        else
+            Debug.LogWarning("Start node not assigned!");
     }
 
-    void EnterNode(int index)
+    public void EnterNode(StoryNode node)
     {
-        currentNode = index;
-
-        StoryNode node = graph.nodes[index];
-
+        currentNode = node;
         Debug.Log("Entering Node: " + node.nodeName);
 
         foreach (var action in node.enterActions)
             StoryActionManager.Trigger(action);
     }
 
-    void ExitNode()
+    public void ExitNode()
     {
-        StoryNode node = graph.nodes[currentNode];
+        if (currentNode == null) return;
 
-        foreach (var action in node.exitActions)
+        foreach (var action in currentNode.exitActions)
             StoryActionManager.Trigger(action);
     }
 
     public void TriggerEvent(StoryEvent evt)
     {
-        StoryNode node = graph.nodes[currentNode];
+        if (currentNode == null) return;
 
-        foreach (var transition in node.transitions)
+        foreach (var transition in currentNode.transitions)
         {
             if (transition.triggerEvent == evt)
             {
                 ExitNode();
-                EnterNode(transition.nextNode);
+                if (transition.nextNode != null)
+                    EnterNode(transition.nextNode);
                 return;
             }
         }

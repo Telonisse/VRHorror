@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-[Serializable]
+[System.Serializable]
 public class StoryTransition
 {
     public StoryEvent triggerEvent;
-    public int nextNode;
+    public StoryNode nextNode; 
 }

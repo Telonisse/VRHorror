@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class StoryNode
+[CreateAssetMenu(fileName = "StoryNode", menuName = "Story/Node")]
+public class StoryNode: ScriptableObject
 {
     public string nodeName;
 
