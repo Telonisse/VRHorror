@@ -11,4 +11,6 @@ public class StoryNode: ScriptableObject
     public List<StoryAction> exitActions = new();
 
     public List<StoryTransition> transitions = new();
+
+    [HideInInspector] public Vector2 editorPosition;
 }
