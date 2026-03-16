@@ -1,6 +1,12 @@
 using UnityEngine;
 
-public abstract class StoryAction : ScriptableObject
+public enum StoryAction 
 {
-    public abstract void Execute();
+    None,
+
+    TurnLightOff,
+    DollPointAtLightSwitch,
+    EnableLampButton,
+    DisableLampButton,
+
 }

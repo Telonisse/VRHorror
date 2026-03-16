@@ -1,71 +1,56 @@
-using NUnit.Framework;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class StoryManager : MonoBehaviour
 {
-    public static StoryManager instance;
+    public static StoryManager Instance;
 
-    public List<StoryNode> activeNodes = new List<StoryNode>();
+    public StoryGraph graph;
 
-    private void Awake()
+    int currentNode;
+
+    void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
-    bool ConditionsMet(StoryNode node)
+    void Start()
     {
-        if (node.conditions == null || node.conditions.Length == 0)
-            return true;
-
-        foreach (var condition in node.conditions)
-        {
-            if (condition == null) continue; // skip null elements safely
-
-            if (!condition.IsMet())
-                return false;
-        }
-
-        return true;
+        EnterNode(graph.startNode);
     }
 
-    public void TriggerEvent(StoryEvent storyEvent)
+    void EnterNode(int index)
     {
-        Debug.Log("Story Event Triggered: " + storyEvent);
+        currentNode = index;
 
-        List<StoryNode> newNodes = new List<StoryNode>();
-        List<StoryNode> triggeredNodes = new List<StoryNode>();
+        StoryNode node = graph.nodes[index];
 
-        foreach (StoryNode node in activeNodes)
+        Debug.Log("Entering Node: " + node.nodeName);
+
+        foreach (var action in node.enterActions)
+            StoryActionManager.Trigger(action);
+    }
+
+    void ExitNode()
+    {
+        StoryNode node = graph.nodes[currentNode];
+
+        foreach (var action in node.exitActions)
+            StoryActionManager.Trigger(action);
+    }
+
+    public void TriggerEvent(StoryEvent evt)
+    {
+        StoryNode node = graph.nodes[currentNode];
+
+        foreach (var transition in node.transitions)
         {
-            if (node.triggerEvent == storyEvent && ConditionsMet(node))
+            if (transition.triggerEvent == evt)
             {
-                Debug.Log("Node Triggered: " + node.nodeName);
-
-                foreach (var action in node.actions)
-                {
-                    action.Execute();
-                }
-
-                triggeredNodes.Add(node);
-
-                if (node.NextNodes != null)
-                {
-                    foreach (StoryNode next in node.NextNodes)
-                    {
-                        Debug.Log("Activating Next Node: " + next.nodeName);
-                    }
-
-                    newNodes.AddRange(node.NextNodes);
-                }
+                ExitNode();
+                EnterNode(transition.nextNode);
+                return;
             }
         }
-
-        foreach (var node in triggeredNodes)
-        {
-            activeNodes.Remove(node);
-        }
-
-        activeNodes.AddRange(newNodes);
     }
 }
