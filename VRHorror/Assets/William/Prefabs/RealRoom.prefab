@@ -745,6 +745,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1049877662168085318, guid: fd0f0bc871e76f94b87fe31eee5724d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1554047930301338259, guid: fd0f0bc871e76f94b87fe31eee5724d0, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -881,6 +885,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5410186490538799665}
     m_Modifications:
+    - target: {fileID: 327721695741879870, guid: 964958444e7de9146979d2a29f0c0148, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6756171592156380842, guid: 964958444e7de9146979d2a29f0c0148, type: 3}
       propertyPath: m_Name
       value: Ceiling
