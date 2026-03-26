@@ -9,4 +9,7 @@ public enum StoryAction
     EnableLampButton = 3,
     DisableLampButton = 4,
 
+    DollPoint = 5,
+    DollStopPoint = 6,
+
 }

@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using UnityEngine;
 
@@ -10,9 +11,27 @@ public class TeddyBearPoint : MonoBehaviour
 
     bool shouldPoint = false;
 
-    private void Start()
+    void Awake()
     {
-        PointAtTarget(target); // Needs to be triggered elsewhere, just test trigger for now, also needs to be added that is to turn of the point but thats easy :3 
+        StoryActionManager.Register(StoryAction.DollPoint, DollPointAtLampButton);
+        StoryActionManager.Register(StoryAction.DollStopPoint, DollStopPointingLampButton);
+
+    }
+
+    void OnDestroy()
+    {
+        StoryActionManager.Unregister(StoryAction.DollPoint, DollPointAtLampButton);
+        StoryActionManager.Unregister(StoryAction.DollStopPoint, DollStopPointingLampButton);
+    }
+    public void DollPointAtLampButton()
+    {
+        PointAtTarget(target);
+    }
+
+    public void DollStopPointingLampButton()
+    {
+        shouldPoint = false;
+        ezBoneScript.enabled = true;
     }
     public void PointAtTarget(Transform newTarget)
     {

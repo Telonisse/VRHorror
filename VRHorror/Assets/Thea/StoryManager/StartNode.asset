@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StartNode
   m_EditorClassIdentifier: 
   nodeName: StartNode
-  enterActions: 0100000003000000
+  enterActions: 010000000300000006000000
   exitActions: 
   transitions:
   - triggerEvent: 1
