@@ -12,4 +12,6 @@ public enum StoryAction
     DollPoint = 5,
     DollStopPoint = 6,
 
+    Shiver = 7,
+
 }

@@ -1,3 +1,4 @@
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -16,6 +17,14 @@ public class LightSwitchHandler : MonoBehaviour
     private Quaternion targetQuaternion;
     private XRSimpleInteractable interactable;
 
+    // ADDDED HERE 
+    private void Awake()
+    {
+        StoryActionManager.Register(StoryAction.TurnLampOn, TurnOn);
+        StoryActionManager.Register(StoryAction.TurnLampOff, TurnOff);
+        StoryActionManager.Register(StoryAction.EnableLampButton, EnableInteraction);
+        StoryActionManager.Register(StoryAction.DisableLampButton, DisableInteraction);
+    }
     void Start()
     {
         isOn = startOn;
@@ -43,7 +52,47 @@ public class LightSwitchHandler : MonoBehaviour
         if (targetLight != null) targetLight.enabled = isOn;
 
         targetQuaternion = isOn ? Quaternion.Euler(onRotation) : Quaternion.Euler(offRotation);
+
+        //unsure about this, might be redudant and weird
+        if (isOn)
+            StoryManager.Instance.TriggerEvent(StoryEvent.LightTurnedOn);
+        else
+            StoryManager.Instance.TriggerEvent(StoryEvent.LightTurnedOff);
+
     }
+    // ADDED HERE
+    void TurnOn()
+    {
+        isOn = true;
+        ApplyState();
+    }
+
+    void TurnOff()
+    {
+        isOn = false;
+        ApplyState();
+    }
+
+    void EnableInteraction()
+    {
+        interactable.enabled = true;
+    }
+
+    void DisableInteraction()
+    {
+        interactable.enabled = false;
+    }
+
+    void ApplyState()
+    {
+        if (targetLight != null)
+            targetLight.enabled = isOn;
+
+        targetQuaternion = isOn
+            ? Quaternion.Euler(onRotation)
+            : Quaternion.Euler(offRotation);
+    }
+    // TIL HERE
 
     void OnDestroy()
     {
@@ -51,5 +100,11 @@ public class LightSwitchHandler : MonoBehaviour
         {
             interactable.selectEntered.RemoveListener(ToggleSwitch);
         }
+
+        // ADDED HERE
+        StoryActionManager.Unregister(StoryAction.TurnLampOn, TurnOn);
+        StoryActionManager.Unregister(StoryAction.TurnLampOff, TurnOff);
+        StoryActionManager.Unregister(StoryAction.EnableLampButton, EnableInteraction);
+        StoryActionManager.Unregister(StoryAction.DisableLampButton, DisableInteraction);
     }
 }

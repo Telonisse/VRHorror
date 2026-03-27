@@ -1,12 +1,20 @@
 using UnityEngine;
 using Bhaptics.SDK2;
-using JetBrains.Annotations;
 
 public class bHapticsTestScript : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
-        bhaptics_library.play(BhapticsEvent.DASH);
+        StoryActionManager.Register(StoryAction.Shiver, StartShiver);
+    }
+   
+    public void StartShiver()
+    {
+        bhaptics_library.play(BhapticsEvent.SHIVER);
+    }
 
+    private void OnDestroy()
+    {
+        StoryActionManager.Unregister(StoryAction.Shiver, StartShiver);
     }
 }

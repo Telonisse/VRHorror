@@ -15,7 +15,6 @@ public class TeddyBearPoint : MonoBehaviour
     {
         StoryActionManager.Register(StoryAction.DollPoint, DollPointAtLampButton);
         StoryActionManager.Register(StoryAction.DollStopPoint, DollStopPointingLampButton);
-
     }
 
     void OnDestroy()
